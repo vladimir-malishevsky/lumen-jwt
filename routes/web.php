@@ -16,3 +16,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/dashboard', ["middleware" => "auth", function () use ($router) {
+    return "Dashboard";
+}]);
